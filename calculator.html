@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Home - Hobbyist Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -8,5 +9,26 @@
 <body>
     <p>The Calculator!</p>
  <!-- TODO Write the form part for the calculator. -->
+  <div class="container">
+    <h1>Anime Watch Time Calculator</h1>
+    <form id="anime-form">
+        <label for="show-name">Show Name:</label>
+        <input type="text" id="show-name" required>
+
+        <label for="episodes">Number of Episodes:</label>
+        <input type="number" id="episodes" required>
+
+        <label for="duration">Duration per Episode (minutes):</label>
+        <input type="number" id="duration" required>
+
+        <button type="submit">Add Show</button>
+    </form>
+
+    <div id="anime-list">
+        <h2>Your Watchlist</h2>
+        <ul id="shows"></ul>
+        <p id="total-time">Total time: 0 hours</p>
+    </div>
+  </div>
   <script src="calculator.js"></script>
 </body>
