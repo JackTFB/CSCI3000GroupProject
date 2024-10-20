@@ -1,1 +1,47 @@
 /* TODO Write CSS Styles */
+
+/* Change font to whatever you want */ 
+body > h1 { 
+    font-size: 40pt;
+}
+
+h1{
+    text-align: center;
+}
+
+/* Aligning The Caculator */ 
+p {
+    text-align: center;
+}
+
+/* Form settings */ 
+form{ 
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+/* Adding spacing between text and input boxes */ 
+form label, form input{
+    margin-bottom: 10px;
+}
+
+/* Input boxes sizing */ 
+input{
+    align-self: center;
+    width: fit-content;
+}
+
+/* For the add show button*/
+button{
+    align-self: center;
+    width: fit-content;
+    margin-bottom: 10px;
+}
+
+/* Can change this or remove if not liked */
+.anime-list > h2, .anime-list>ul{ 
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
