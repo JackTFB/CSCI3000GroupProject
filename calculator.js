@@ -10,12 +10,6 @@ document.getElementById("anime-form").addEventListener("submit", function(event)
     // Calculate total time for the show
     const totalTimeForShow = (episodes * duration) / 60; // in hours
 
-    /*if (totalTimeForShow > 1){
-
-    }
-    Want to represnt in minutes if not a whole hour 
-    */ 
-
     // Add the show to the list
     const showList = document.getElementById("shows");
     const listItem = document.createElement("li");
@@ -49,8 +43,6 @@ function updateTotalTime(newTime) {
     else{
         totalTimeText.textContent = `Total time: ${(totalTime*60).toFixed(2)} minutes`;
     }
-    //document.getElementById("total-time").textContent = `Total time: ${totalTime.toFixed(2)} hours`;
-    //totalTimeText.textContent = `Total time: ${totalTime.toFixed(2)} hours`;
 }
 
 // Function that resets show list and time 
