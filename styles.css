@@ -4,22 +4,76 @@ body {
     background-color: #f7f7f7;
     color: #333;
     line-height: 1.6;
+    margin: 0; /* Reset default margin */
+    padding-top: 60px; /* Adjust to prevent content overlap with navbar */
+}
+
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: #2c3e50;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu li {
+    margin: 0;
+}
+
+.nav-menu li a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.nav-menu li a:hover {
+    background-color: #2980b9;
+}
+
+.nav-menu li a .icon {
+    margin-right: 8px;
+    font-size: 1.2em;
 }
 
 /* Heading Styles */
-body > h1 {
-    font-size: 40pt;
-    text-align: center;
-    margin-top: 20px;
-    color: #2c3e50;
-}
-
 h1 {
     font-family: 'Helvetica Neue', 'Helvetica', 'sans-serif';
     font-weight: 200;
     text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: #2c3e50;
 }
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+    }
 
+    .nav-menu li a {
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    body {
+        padding-top: 100px; /* Increase padding for stacked navbar */
+    }
+}
 /* Paragraph Styling (Description Section) */
 p {
     text-align: center;
@@ -74,10 +128,10 @@ input:hover {
     border-color: #3498db;
 }
 
-/* Call-to-Action Button */
+/* Call-to-Action Button  */
 .cta-button {
-    display: block; /* makes it look like a block */
-    margin: 20px auto; /* Center the button horizontally and add spacing */
+    display: block;
+    margin: 20px auto;
     padding: 10px 20px;
     background-color: #3498db;
     color: white;
@@ -85,7 +139,7 @@ input:hover {
     border-radius: 5px;
     font-size: 1.2em;
     transition: background-color 0.3s ease;
-    text-align: center; /* Ensure text inside the button is centered */
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -110,7 +164,7 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Button Focus State for Accessibility */
+/* Button Focus State for Accessibility  pulled from online */
 button:focus {
     outline: none;
     box-shadow: 0 0 3px 2px rgba(52, 152, 219, 0.5);
@@ -159,19 +213,9 @@ html {
 }
 
 /* Active Link Styling */
-nav a.active {
+.nav-menu li a.active {
     font-weight: bold;
     border-bottom: 2px solid #3498db;
-}
-
-/* Sticky Header */
-header {
-    position: sticky;
-    top: 0;
-    background-color: #f7f7f7;
-    z-index: 1000;
-    padding: 10px;
-    box-shadow: 0 4px 2px -2px gray;
 }
 
 /* Footer Styling */
@@ -213,12 +257,22 @@ footer p:hover {
     input {
         width: 90%;
     }
-e
+
     .anime-list > h2,
     .anime-list > ul,
     .game-list > h2,
     .game-list > ul {
         margin-left: 20px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    .nav-menu li a {
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
     }
 
     footer {

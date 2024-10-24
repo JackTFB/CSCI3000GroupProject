@@ -1,4 +1,6 @@
-// Anime Watch Time Calculator Code
+
+
+// Event listener for anime form submission
 document.getElementById("anime-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -27,6 +29,7 @@ document.getElementById("anime-form").addEventListener("submit", function(event)
     document.getElementById("anime-form").reset();
 });
 
+// Event listener for resetting the anime list
 document.getElementById("reset-list").addEventListener("click", function() {
     resetList();
 });
@@ -43,14 +46,17 @@ function updateTotalTime(newTime) {
     }
 }
 
+// Function that resets the anime show list and time
 function resetList() {
     const showList = document.getElementById("shows");
-    showList.innerHTML = ''; // Clear the list
+    showList.replaceChildren(); // Replace with emptiness
     totalTime = 0;
     totalTimeText.textContent = `Total time: 0 hours`;
 }
 
-// Video Game Time Calculator Code
+//NEW VIDEO GAME JS BELOW
+
+// Event listener for video game form submission
 document.getElementById("game-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -75,6 +81,7 @@ document.getElementById("game-form").addEventListener("submit", function(event) 
     document.getElementById("game-form").reset();
 });
 
+// Event listener for resetting the game list
 document.getElementById("reset-game-list").addEventListener("click", function() {
     resetGameList();
 });
@@ -91,9 +98,10 @@ function updateTotalGameTime(newTime) {
     }
 }
 
+// Function that resets the game list and time
 function resetGameList() {
     const gameList = document.getElementById("games");
-    gameList.innerHTML = ''; // Clear the list
+    gameList.replaceChildren(); 
     totalGameTime = 0;
     totalGameTimeText.textContent = `Total time: 0 hours`;
 }
