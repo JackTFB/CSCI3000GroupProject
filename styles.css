@@ -31,6 +31,15 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Container Styling */
+.container {
+    margin: 20px auto;
+    width: 80%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
 /* Form Styling */
 form {
     margin: 0 auto;
@@ -64,8 +73,10 @@ input {
 input:hover {
     border-color: #3498db;
 }
+
+/* Call-to-Action Button */
 .cta-button {
-    display: block; /* Ensure the button behaves like a block element */
+    display: block; /* makes it look like a block */
     margin: 20px auto; /* Center the button horizontally and add spacing */
     padding: 10px 20px;
     background-color: #3498db;
@@ -75,10 +86,6 @@ input:hover {
     font-size: 1.2em;
     transition: background-color 0.3s ease;
     text-align: center; /* Ensure text inside the button is centered */
-}
-
-.cta-button:hover {
-    background-color: #2980b9;
 }
 
 .cta-button:hover {
@@ -109,15 +116,17 @@ button:focus {
     box-shadow: 0 0 3px 2px rgba(52, 152, 219, 0.5);
 }
 
-/* Anime List Section */
-.anime-list > h2 {
+/* Anime and Game List Sections */
+.anime-list > h2,
+.game-list > h2 {
     font-size: 1.8rem;
     color: #2c3e50;
     margin-left: 100px;
     margin-bottom: 10px;
 }
 
-.anime-list > ul {
+.anime-list > ul,
+.game-list > ul {
     margin-left: 100px;
     padding-left: 20px;
     list-style-type: disc;
@@ -126,17 +135,20 @@ button:focus {
     border-radius: 5px;
 }
 
-.anime-list ul li {
+.anime-list ul li,
+.game-list ul li {
     margin-bottom: 10px;
     font-size: 1.2rem;
 }
 
-.anime-list ul li a {
+.anime-list ul li a,
+.game-list ul li a {
     text-decoration: none;
     color: #3498db;
 }
 
-.anime-list ul li a:hover {
+.anime-list ul li a:hover,
+.game-list ul li a:hover {
     text-decoration: underline;
     color: #2980b9;
 }
@@ -182,6 +194,7 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
 footer p {
     color: #3498db;
     text-decoration: none;
@@ -200,9 +213,11 @@ footer p:hover {
     input {
         width: 90%;
     }
-
+e
     .anime-list > h2,
-    .anime-list > ul {
+    .anime-list > ul,
+    .game-list > h2,
+    .game-list > ul {
         margin-left: 20px;
     }
 

@@ -1,47 +1,64 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home - Hobbyist Calculator</title>
+    <title>Calculator - Hobbyist Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <h1>The Calculator!</h1>
- <!-- TODO Write the form part for the calculator. -->
 
- <h2>Other pages</h2>
-
+    <h2>Other pages</h2>
     <ul>
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>
-            <a href="about.html">About</a>
-        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
     </ul>
 
-  <div class="container">
-    <h1>Anime Watch Time Calculator</h1>
-    <form id="anime-form">
-        <label for="show-name">Show Name:</label>
-        <input type="text" id="show-name" required>
+    <!-- Anime Watch Time Calculator -->
+    <div class="container">
+        <h1>Anime Watch Time Calculator</h1>
+        <form id="anime-form">
+            <label for="show-name">Show Name:</label>
+            <input type="text" id="show-name" required>
 
-        <label for="episodes">Number of Episodes:</label>
-        <input type="number" id="episodes" min="0" required>
+            <label for="episodes">Number of Episodes:</label>
+            <input type="number" id="episodes" min="0" required>
 
-        <label for="duration">Duration per Episode (minutes):</label>
-        <input type="number" id="duration" min="0" required>
+            <label for="duration">Duration per Episode (minutes):</label>
+            <input type="number" id="duration" min="0" required>
 
-        <button type="submit">Add Show</button>
-        <button type="button" id = "reset-list"> Reset</button>
-    </form>
+            <button type="submit">Add Show</button>
+            <button type="button" id="reset-list">Reset</button>
+        </form>
 
-    <div class="anime-list"> <!-- Changed from ID to class -->
-        <h2>Your Watchlist</h2>
-        <ul id="shows"></ul>
-        <p id="total-time">Total time: 0 hours</p>
+        <div class="anime-list">
+            <h2>Your Watchlist</h2>
+            <ul id="shows"></ul>
+            <p id="total-time">Total time: 0 hours</p>
+        </div>
     </div>
-  </div>
-  <script src="calculator.js"></script>
+
+    <!-- Video Game Time Calculator -->
+    <div class="container">
+        <h1>Video Game Time Calculator</h1>
+        <form id="game-form">
+            <label for="game-name">Game Name:</label>
+            <input type="text" id="game-name" required>
+
+            <label for="hours">Estimated Hours to Complete:</label>
+            <input type="number" id="hours" min="0" required>
+
+            <button type="submit">Add Game</button>
+            <button type="button" id="reset-game-list">Reset</button>
+        </form>
+
+        <div class="game-list">
+            <h2>Your Game List</h2>
+            <ul id="games"></ul>
+            <p id="total-game-time">Total time: 0 hours</p>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
 </body>
+</html>
