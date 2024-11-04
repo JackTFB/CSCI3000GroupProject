@@ -1,7 +1,7 @@
 /* General Body and Text Settings */
 body {
     font-family: 'Helvetica Neue', 'Helvetica', 'sans-serif';
-    background-image: url('video\ game.png'); /* Update the path to match your image location */
+    background-image: url('Game_Collage.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
