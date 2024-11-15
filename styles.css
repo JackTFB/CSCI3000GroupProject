@@ -15,6 +15,11 @@ body {
     min-height: 100vh; /* Ensures footer stays at the bottom */
 }
 
+/* Background Image for Anime section */
+body#anime{
+    background-image: url('Anime_Collage.png'); 
+}
+
 /* Header Styling */
 .navbar {
     background-color: rgba(44, 62, 80, 1); /* Full opacity for clearer header */
@@ -55,7 +60,7 @@ h1 {
     text-align: center;
     font-size: 2.5em;
     margin-top: 20px;
-    color: #2c3e50;
+    color: #d9ecff;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Shadow for title readability */
 }
 
@@ -133,10 +138,21 @@ input:hover {
     border-color: #3498db;
 }
 
+#sub-Header{
+    text-align: center;
+    font-size: 1.5em;
+    padding: auto;
+    color: #d9ecff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Shadow for title readability */
+}
+
+
+
 /* Call-to-Action Button Styling */
 .cta-button {
     display: block;
     margin: 20px auto;
+    width: fit-content;
     padding: 10px 20px;
     background-color: #3498db;
     color: white;

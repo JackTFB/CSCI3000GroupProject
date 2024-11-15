@@ -5,7 +5,7 @@
     <title>Calculator - Hobbyist Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body id="anime">
+<body>
     <h1>The Calculator!</h1>
 
     <!-- Navigation Bar -->
@@ -19,32 +19,8 @@
         </ul>
     </nav>
 </header>
-    <!-- Anime Watch Time Calculator -->
-    <div class="container">
-        <h1>Anime Watch Time Calculator</h1>
-        <form id="anime-form">
-            <label for="show-name">Show Name:</label>
-            <input type="text" id="show-name" required>
-
-            <label for="episodes">Number of Episodes:</label>
-            <input type="number" id="episodes" min="0" required>
-
-            <label for="duration">Duration per Episode (minutes):</label>
-            <input type="number" id="duration" min="0" required>
-
-            <button type="submit">Add Show</button>
-            <button type="button" id="reset-list">Reset</button>
-        </form>
-
-        <div class="anime-list">
-            <h2>Your Watchlist</h2>
-            <ul id="shows"></ul>
-            <p id="total-time">Total time: 0 hours</p>
-        </div>
-    </div>
 
     <!-- Video Game Time Calculator -->
-     <!--
     <div class="container">
         <h1>Video Game Time Calculator</h1>
         <form id="game-form">
@@ -63,7 +39,7 @@
             <ul id="games"></ul>
             <p id="total-game-time">Total time: 0 hours</p>
         </div>
-    </div> -->
+    </div>
 
     <script src="calculator.js"></script>
 </body>
