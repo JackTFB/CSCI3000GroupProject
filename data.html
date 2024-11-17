@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby List - Hobbyist Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Hobby List</h1>
+
+<!-- Navigation Bar -->
+<header>
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="index.html"><span class="icon">&#127968;</span> Home</a></li>
+            <li><a href="calculator.html"><span class="icon">&#128187;</span> Anime</a></li>
+            <li><a href="videogame.html"><span class="icon">&#127918;</span> Video Games</a></li>
+            <li><a href="data.html" class="active"><span class="icon">&#128196;</span> Hobby List</a></li>
+            <li><a href="about.html"><span class="icon">&#8505;</span> About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Combined Hobby List -->
+<div class="container">
+    <h2>Hobby List</h2>
+    <table id="hobby-list" class="hobby-table">
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Total Time</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Dynamically populated -->
+        </tbody>
+    </table>
+    <p id="total-hobby-time">Total time: 0 hours</p>
+    <button id="clear-hobby-storage" class="cta-button">Clear All Data</button>
+</div>
+
+<script>
+    // Fetch Anime Data
+    const animeData = JSON.parse(localStorage.getItem("animeShows")) || [];
+    const gameData = JSON.parse(localStorage.getItem("gameList")) || [];
+    const hobbyTableBody = document.querySelector("#hobby-list tbody");
+    const totalHobbyTimeText = document.getElementById("total-hobby-time");
+
+    // Consolidate and Sort Data
+    const combinedData = [
+        ...animeData.map(item => ({
+            type: "Anime",
+            name: item.name,
+            details: `${item.episodes} episodes, ${item.duration} min/episode`,
+            totalTime: item.totalTime || 0
+        })),
+        ...gameData.map(item => ({
+            type: "Video Game",
+            name: item.name,
+            details: "Estimated Completion Time",
+            totalTime: item.hours || 0
+        }))
+    ];
+
+    combinedData.sort((a, b) => b.totalTime - a.totalTime); // Sort by total time descending
+
+    // Calculate Total Time
+    const totalHobbyTime = combinedData.reduce((total, item) => total + item.totalTime, 0);
+
+    // Render Data into Table
+    if (combinedData.length > 0) {
+        combinedData.forEach(item => {
+            const row = document.createElement("tr");
+
+            const typeCell = document.createElement("td");
+            typeCell.textContent = item.type;
+            typeCell.classList.add(item.type === "Anime" ? "anime-type" : "game-type");
+            row.appendChild(typeCell);
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = item.name;
+            row.appendChild(nameCell);
+
+            const detailsCell = document.createElement("td");
+            detailsCell.textContent = item.details;
+            row.appendChild(detailsCell);
+
+            const timeCell = document.createElement("td");
+            timeCell.textContent = item.totalTime >= 1
+                ? `${item.totalTime.toFixed(2)} hours`
+                : `${(item.totalTime * 60).toFixed(2)} minutes`;
+            row.appendChild(timeCell);
+
+            hobbyTableBody.appendChild(row);
+        });
+
+        // Display Total Hobby Time
+        totalHobbyTimeText.textContent = totalHobbyTime >= 1
+            ? `Total time: ${totalHobbyTime.toFixed(2)} hours`
+            : `Total time: ${(totalHobbyTime * 60).toFixed(2)} minutes`;
+    } else {
+        // No data available
+        const noDataRow = document.createElement("tr");
+        const noDataCell = document.createElement("td");
+        noDataCell.textContent = "No data available.";
+        noDataCell.colSpan = 4; // Spans across all columns
+        noDataCell.style.textAlign = "center";
+        noDataRow.appendChild(noDataCell);
+        hobbyTableBody.appendChild(noDataRow);
+
+        totalHobbyTimeText.textContent = "Total time: 0 hours";
+    }
+
+    // Clear All Data
+    document.getElementById("clear-hobby-storage").addEventListener("click", () => {
+        localStorage.removeItem("animeShows");
+        localStorage.removeItem("gameList");
+        window.location.reload();
+    });
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 /* General Body and Text Settings */
 body {
     font-family: 'Helvetica Neue', 'Helvetica', 'sans-serif';
-    background-image: url('Game_Collage.png'); 
+    background-image: url('list_bg.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -17,7 +17,11 @@ body {
 
 /* Background Image for Anime section */
 body#anime{
-    background-image: url('Anime_Collage.png'); 
+    background-image: url('Anime_Collage.png');
+}
+
+body#game{
+    background-image: url("Game_Collage.png");
 }
 
 /* Header Styling */
