@@ -341,3 +341,13 @@ footer a:hover {
         font-size: 0.8rem;
     }
 }
+
+/* Centering the total time text */
+#total-hobby-time {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 10px auto;
+    font-weight: bold;
+    width: fit-content
+
+}
